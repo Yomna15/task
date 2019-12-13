@@ -53,14 +53,8 @@ class User(AbstractBaseUser):
         return self.email
 
     def get_full_name(self):
-        return self.email
+        return self.name
 
     def get_short_name(self):
-        return self.email
+        return self.name
 
-class video(models.Model):
-    video = models.FileField(upload_to="files/")
-    user = models.ForeignKey('User',on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.user.name

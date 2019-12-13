@@ -20,11 +20,7 @@ class RegisterForm(UserCreationForm):
         required=True,
         label="Password",
         widget=forms.PasswordInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': '패스워드',
-                'required' : 'True'
-            }
+            
         )
     )
     class Meta:
@@ -32,7 +28,3 @@ class RegisterForm(UserCreationForm):
         fields = ('email','name','password')
         
 
-class VideoForm(forms.ModelForm):
-    class Meta:
-        model = models.video 
-        fields = ('video',)

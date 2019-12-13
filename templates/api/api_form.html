@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Api{% endblock %}
+{% block content %}
+  <h2>Register</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label>Origin</label>
+    <input type = "text" name = "origin">
+    <br/>
+    <label>Destination</label>
+    <input type = "text" name = "destination">
+    <br/>
+    <button type="submit">Get Distance</button>
+  </form>
+
+  {% if distance %}
+  <p>Distance = {% distance %}</p>
+  {% endif %}
+{% endblock %}
